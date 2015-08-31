@@ -40,6 +40,8 @@ public class MainActivity extends Activity {
     protected void onRestart() {
         super.onRestart();
         Log.i(TAG, "onRestart");
+
+        // get Extra here in second time
         data = getIntent().getStringExtra(SubActivity.EXTRA_NAME);
         if (data != null) {
             Log.i(TAG, "data=" + data);
