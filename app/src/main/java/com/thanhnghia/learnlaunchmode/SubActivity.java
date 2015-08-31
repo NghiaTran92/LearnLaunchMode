@@ -8,6 +8,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 /**
  * Created by ngh on 8/31/2015.
  */
@@ -27,8 +31,11 @@ public class SubActivity extends Activity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SimpleDateFormat simpleDateFormat=new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+                String time=simpleDateFormat.format(Calendar.getInstance().getTime());
+                Log.i(TAG," startActivity time="+time);
                 Intent i=new Intent(SubActivity.this,MainActivity.class);
-                i.putExtra(EXTRA_NAME,"data from sub activity");
+                i.putExtra(EXTRA_NAME,"data from sub activity "+time);
                 startActivity(i);
             }
         });
