@@ -32,8 +32,19 @@ public class MainActivity extends Activity {
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, SubActivity.class);
                 startActivity(i);
+
             }
         });
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        Log.i(TAG, "onNewIntent");
+        data = intent.getStringExtra(SubActivity.EXTRA_NAME);
+        if (data != null) {
+            Log.i(TAG, "data=" + data);
+        }
     }
 
     @Override

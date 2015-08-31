@@ -36,6 +36,7 @@ public class SubActivity extends Activity {
                 Log.i(TAG," startActivity time="+time);
                 Intent i=new Intent(SubActivity.this,MainActivity.class);
                 i.putExtra(EXTRA_NAME,"data from sub activity "+time);
+
                 startActivity(i);
             }
         });
