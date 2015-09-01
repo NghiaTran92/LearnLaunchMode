@@ -40,6 +40,7 @@ public class SubActivity extends Activity {
                 startActivity(i);
             }
         });
+
     }
 
 
